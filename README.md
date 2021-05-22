@@ -35,4 +35,11 @@ The first commit is to align with the course ep.
 * HASH "#" stands for title
 * START "*" stands for item
 * DASH "---" stands for line break
+---
+
+## 4 Git clean -x -d -i
+
+Using git clean -x -d -i in terminal can clean the files in gitignore to avoid any impact when doing the code reverse.
+
+
 
