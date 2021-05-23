@@ -40,6 +40,21 @@ The first commit is to align with the course ep.
 ## 4 Git clean -x -d -i
 
 Using git clean -x -d -i in terminal can clean the files in gitignore to avoid any impact when doing the code reverse.
+---
 
+## 5 Target Points
+
+Target point array is to assign an agent to patrol around these target locations.
+By implementing these target points, AI behaviour tree and blackboard are often used.
+---
+
+## 6 Assets Grouping
+
+Layers are often for visibility. One assets can be assigned to multiple layers.
+Groups are often for batch operation and fast multi selection.
+Tags are ... not sure what are the advantages... probably for tracking in the CPP???
+Parent Empty Actors are often for iterating the children and for batch moving.
+Folders are often to organize the hierachy.
+---
 
 
