@@ -57,4 +57,10 @@ Parent Empty Actors are often for iterating the children and for batch moving.
 Folders are often to organize the hierachy.
 ---
 
+## 7 Behavior Tree
+
+Behavior tree is using a sequence module to switch the index cycle and the move to action. Index cycle is made in blueprint.
+---
+
+
 
