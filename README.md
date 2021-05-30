@@ -62,5 +62,13 @@ Folders are often to organize the hierachy.
 Behavior tree is using a sequence module to switch the index cycle and the move to action. Index cycle is made in blueprint.
 ---
 
+## 8 Performance Profiling
+
+Using blueprint can drag system running slow. In order to check the load/consume of each function/method in the blueprint/cpp. Performance profiling is a good way. 
+Window -> Developer Tools -> Frontend Session.
+---
+
+
+
 
 
