@@ -9,6 +9,6 @@ public class TestingGroundFPSTarget : TargetRules
 	{
 		Type = TargetType.Game;
 		DefaultBuildSettings = BuildSettingsVersion.V2;
-		ExtraModuleNames.Add("TestingGroundFPS");
+        ExtraModuleNames.Add("TestingGroundFPS");
 	}
 }
