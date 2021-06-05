@@ -3,18 +3,28 @@
 
 #include "ChosseNextWaypoint.h"
 #include "AIController.h"
-#include "PatrollingGuard.h"
+#include "PatrolRoute.h"
 #include "BehaviorTree/BlackboardComponent.h"
 
 
 EBTNodeResult::Type UChosseNextWaypoint::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) {
-	// todo protect empty ptr
 	// notice that if a new AI is added, with Patrol Route not set, the system would crash because of PatrolPoints = NULL, and PatrolPoints[Index] would return an unexpected val.
 
 	// get the patrol points
 	auto AIControlledPawn = OwnerComp.GetAIOwner()->GetPawn();
-	auto PatrollingGuard = Cast<APatrollingGuard>(AIControlledPawn);
-	auto PatrolPoints = PatrollingGuard->PatrolPointsCPP;
+	auto PatrolRoute = AIControlledPawn->FindComponentByClass<UPatrolRoute>();
+
+	if (!ensure(PatrolRoute)) {
+		return EBTNodeResult::Failed;
+	}
+
+	// protect no patrol route component
+	auto PatrolPoints = PatrolRoute->GetPatrolPoints();
+
+	if (PatrolPoints.Num() == 0) {
+		UE_LOG(LogTemp, Warning, TEXT("The AI has no patrol points"));
+		return EBTNodeResult::Failed;
+	}
 
 	// set next waypoints
 	auto BlackboardComp = OwnerComp.GetBlackboardComponent();

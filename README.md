@@ -68,6 +68,14 @@ Using blueprint can drag system running slow. In order to check the load/consume
 Window -> Developer Tools -> Frontend Session.
 ---
 
+## 9 EditInstanceOnly vs EditAnywhere vs EditDefaultsOnly
+
+EditAntwhere means the variable can be modified either in the blueprint, or in the instance generated (inherited) by the blueprint.
+EditDefaultsOnly means the variable can be only modified in the blueprint.
+EditInstanceOnly means the variable can be only modified in the instance generated.
+---
+
+
 
 
 
