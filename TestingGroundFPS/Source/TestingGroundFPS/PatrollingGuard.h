@@ -14,8 +14,8 @@ class TESTINGGROUNDFPS_API APatrollingGuard : public ATP_ThirdPersonCharacter
 {
 	GENERATED_BODY()
 
-protected:
-	UPROPERTY(EditAnywhere, Category = PatrolRoute)
+public:
+	UPROPERTY(EditInstanceOnly, Category = PatrolRoute)
 	TArray<AActor*> PatrolPointsCPP;
 	
 };
