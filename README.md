@@ -75,6 +75,11 @@ EditDefaultsOnly means the variable can be only modified in the blueprint.
 EditInstanceOnly means the variable can be only modified in the instance generated.
 ---
 
+## 10 Graphs in an animation blueprint
+
+EventGraph is much like the other event graghs in the blueprint where the variables are mostly set up here.
+AnimGraph is to set which animation should be applied to the skeleton. State machine can be used to switch in between different states.
+---
 
 
 
