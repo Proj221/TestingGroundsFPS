@@ -90,6 +90,13 @@ When dealing with a behavior tree at the same time, the key to the SETTER and th
 Therefore, the SETTER key (KEY_SETTER) and the GETTER key (KEY_GETTER) would be matached at the BTtask assign interface.
 ---
 
+## 12 Map out the source codes
+
+TODO map out how the NPC is sharing same movement component (especially rotation) with the human player.
+---
+
+
+
 
 
 
