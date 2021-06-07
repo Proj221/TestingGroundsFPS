@@ -81,6 +81,15 @@ EventGraph is much like the other event graghs in the blueprint where the variab
 AnimGraph is to set which animation should be applied to the skeleton. State machine can be used to switch in between different states.
 ---
 
+## 11 About Blackboard
+
+Blackboard is like a dictionary where a "key-value" combo is always set.
+When you need to SET a blackboard value, you always need to "Set value as xxx", and assign it with a key and their true value.
+When you need to GET a blackboard value, you alwasy need to "Get value as xxx", and feed it with a key name and the value would return accordingly.
+When dealing with a behavior tree at the same time, the key to the SETTER and the GETTER can be different as usually a BTtask would be created.
+Therefore, the SETTER key (KEY_SETTER) and the GETTER key (KEY_GETTER) would be matached at the BTtask assign interface.
+---
+
 
 
 
