@@ -95,6 +95,15 @@ Therefore, the SETTER key (KEY_SETTER) and the GETTER key (KEY_GETTER) would be 
 TODO map out how the NPC is sharing same movement component (especially rotation) with the human player.
 ---
 
+## 13 SetFocus
+
+Compared with SetFocusPoint, SetFoucs has more ability where an actor can be used as a target "point".
+Pitch angle will also be used to SetFocus.
+However, please do remember to tick Pawn->Use Controller Rotation Pitch / Yaw and Roll!
+The aiming point seems to be the actor bottom point.
+---
+
+
 
 
 
