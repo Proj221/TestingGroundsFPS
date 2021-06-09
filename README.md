@@ -103,6 +103,12 @@ However, please do remember to tick Pawn->Use Controller Rotation Pitch / Yaw an
 The aiming point seems to be the actor bottom point.
 ---
 
+## 14 Services
+
+If you want to do something repeatly, use service.
+---
+
+
 
 
 
