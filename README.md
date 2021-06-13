@@ -111,7 +111,7 @@ If you want to do something repeatly, use service.
 ## 15 lfs and git
 
 Change track file: .gitattibutes
-Fresh lfs cache (to make files untracked from LFS): git --cached -r "PATH/."
+Fresh lfs cache (to make files untracked from LFS): git rm --cached -r "PATH/."
 Re-add lfs files: git -add "PATH/."
 ---
 
