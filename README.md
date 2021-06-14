@@ -115,6 +115,15 @@ Fresh lfs cache (to make files untracked from LFS): git rm --cached -r "PATH/."
 Re-add lfs files: git -add "PATH/."
 ---
 
+## 16 IK
+
+---
+
+## 17 Extract old version blueprint
+
+$ git show "SHORT_ID":"PATH" | git lfs smudge > "PATH" (to generate the old blueprint)
+--- 
+
 
 
 
