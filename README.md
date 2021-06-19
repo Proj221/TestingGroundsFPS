@@ -3,12 +3,12 @@
 This is the last course session to Udemy Unreal Course.
 ---
 
-## 1 First Commit
+## 1 First Commit ##
 
 The first commit is to align with the course ep.
 ---
 
-## 2 GDD (Game Description Document)
+## 2 GDD (Game Description Document) ##
 ### Description
 * 2.1 You can pass a testing ground undetected
 * 2.2 If detected, you must clear the area
@@ -31,24 +31,24 @@ The first commit is to align with the course ep.
 * 2.17 Creating a new skeletal animation
 ---
 
-## 3 Markdown & Market Decoration
+## 3 Markdown & Market Decoration ##
 * HASH "#" stands for title
 * START "*" stands for item
 * DASH "---" stands for line break
 ---
 
-## 4 Git clean -x -d -i
+## 4 Git clean -x -d -i ##
 
 Using git clean -x -d -i in terminal can clean the files in gitignore to avoid any impact when doing the code reverse.
 ---
 
-## 5 Target Points
+## 5 Target Points ##
 
 Target point array is to assign an agent to patrol around these target locations.
 By implementing these target points, AI behaviour tree and blackboard are often used.
 ---
 
-## 6 Assets Grouping
+## 6 Assets Grouping ##
 
 Layers are often for visibility. One assets can be assigned to multiple layers.
 Groups are often for batch operation and fast multi selection.
@@ -57,31 +57,31 @@ Parent Empty Actors are often for iterating the children and for batch moving.
 Folders are often to organize the hierachy.
 ---
 
-## 7 Behavior Tree
+## 7 Behavior Tree ##
 
 Behavior tree is using a sequence module to switch the index cycle and the move to action. Index cycle is made in blueprint.
 ---
 
-## 8 Performance Profiling
+## 8 Performance Profiling ##
 
 Using blueprint can drag system running slow. In order to check the load/consume of each function/method in the blueprint/cpp. Performance profiling is a good way. 
 Window -> Developer Tools -> Frontend Session.
 ---
 
-## 9 EditInstanceOnly vs EditAnywhere vs EditDefaultsOnly
+## 9 EditInstanceOnly vs EditAnywhere vs EditDefaultsOnly ##
 
 EditAntwhere means the variable can be modified either in the blueprint, or in the instance generated (inherited) by the blueprint.
 EditDefaultsOnly means the variable can be only modified in the blueprint.
 EditInstanceOnly means the variable can be only modified in the instance generated.
 ---
 
-## 10 Graphs in an animation blueprint
+## 10 Graphs in an animation blueprint ##
 
 EventGraph is much like the other event graghs in the blueprint where the variables are mostly set up here.
 AnimGraph is to set which animation should be applied to the skeleton. State machine can be used to switch in between different states.
 ---
 
-## 11 About Blackboard
+## 11 About Blackboard ##
 
 Blackboard is like a dictionary where a "key-value" combo is always set.
 When you need to SET a blackboard value, you always need to "Set value as xxx", and assign it with a key and their true value.
@@ -90,12 +90,12 @@ When dealing with a behavior tree at the same time, the key to the SETTER and th
 Therefore, the SETTER key (KEY_SETTER) and the GETTER key (KEY_GETTER) would be matached at the BTtask assign interface.
 ---
 
-## 12 Map out the source codes
+## 12 Map out the source codes ##
 
 TODO map out how the NPC is sharing same movement component (especially rotation) with the human player.
 ---
 
-## 13 SetFocus
+## 13 SetFocus ##
 
 Compared with SetFocusPoint, SetFoucs has more ability where an actor can be used as a target "point".
 Pitch angle will also be used to SetFocus.
@@ -103,23 +103,23 @@ However, please do remember to tick Pawn->Use Controller Rotation Pitch / Yaw an
 The aiming point seems to be the actor bottom point.
 ---
 
-## 14 Services
+## 14 Services ##
 
 If you want to do something repeatly, use service.
 ---
 
-## 15 lfs and git
+## 15 lfs and git ##
 
 Change track file: .gitattibutes
 Fresh lfs cache (to make files untracked from LFS): git rm --cached -r "PATH/."
 Re-add lfs files: git -add "PATH/."
 ---
 
-## 16 IK
+## 16 IK ##
 
 ---
 
-## 17 Extract old version blueprint
+## 17 Extract old version blueprint ##
 
 $ git show "SHORT_ID":"PATH" | git lfs smudge > "PATH" (to generate the old blueprint)
 --- 
