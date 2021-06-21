@@ -124,10 +124,15 @@ The first commit is to align with the course ep.
 + $ git show "SHORT_ID":"PATH" | git lfs smudge > "PATH" (to generate the old blueprint)
 --- 
 
-## 18 Animation slot
+## 18 Animation slot ##
 
 + Animation slot is a placeholder to feed in the animations. (to make 1 mesh listens to 2 parts: animation slot overrides the states machine)
 + Layer blend per bone is a good way to seperate the bone animation in the structure where it can makes the upper body running 1 animation with the lower body not impacted.
+---
+
+## 19 Github Pull & Push test ##
+
+No other aims. Just for testing.
 ---
 
 
