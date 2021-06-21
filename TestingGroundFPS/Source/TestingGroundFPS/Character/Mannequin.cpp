@@ -51,8 +51,10 @@ void AMannequin::BeginPlay()
 	Gun->AttachToComponent(FPArms, FAttachmentTransformRules(EAttachmentRule::SnapToTarget, true), TEXT("GripPoint"));
 	Gun->AnimInstance = FPArms->GetAnimInstance();
 
-	// as the setupplayerinputcomp is not calling properly
-	// SetupPlayerInputComponent(InputComponent);
+	// to make sure if it is really a player is taking control of the mannequin
+	if (InputComponent != NULL) {
+		InputComponent->BindAction("Fire", IE_Pressed, this, &AMannequin::PullTrigger);
+	}
 	
 }
 
@@ -67,10 +69,13 @@ void AMannequin::Tick(float DeltaTime)
 void AMannequin::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
+	// if we put input component here, Gun is not set yet therefore it is causing problems.
+	// Instead, should be implemented in BeginPlay()
+	// PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &AMannequin::Fire);
 
 }
 
-void AMannequin::Fire() {
+void AMannequin::PullTrigger() {
 	UE_LOG(LogTemp, Warning, TEXT("Firing!!!"));
 	Gun->OnFire();
 }
