@@ -132,7 +132,7 @@ The first commit is to align with the course ep.
 
 ## 19 Github Pull & Push test ##
 
-No other aims. Just for testing.
+No other aims. Just for testing. ver2.
 ---
 
 
