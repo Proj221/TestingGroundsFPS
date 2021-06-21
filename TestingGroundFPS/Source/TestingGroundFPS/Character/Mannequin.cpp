@@ -47,12 +47,19 @@ void AMannequin::BeginPlay()
 	}
 	Gun = GetWorld()->SpawnActor<AGun>(GunBlueprint);
 
-	//Attach gun mesh component to Skeleton, doing it here because the skeleton is not yet created in the constructor
-	Gun->AttachToComponent(FPArms, FAttachmentTransformRules(EAttachmentRule::SnapToTarget, true), TEXT("GripPoint"));
-	Gun->AnimInstance = GetMesh()->GetAnimInstance();
+	if (IsPlayerControlled()) {
+		//Attach gun mesh component to Skeleton, doing it here because the skeleton is not yet created in the constructor
+		Gun->AttachToComponent(FPArms, FAttachmentTransformRules(EAttachmentRule::SnapToTarget, true), TEXT("GripPoint"));
+	}
+	else {
+		Gun->AttachToComponent(GetMesh(), FAttachmentTransformRules(EAttachmentRule::SnapToTarget, true), TEXT("GripPoint"));
+	}
+	
+	Gun->AnimInstance1P = FPArms->GetAnimInstance();
+	Gun->AnimInstance3P = GetMesh()->GetAnimInstance();
 
 	// to make sure if it is really a player is taking control of the mannequin
-	if (InputComponent != NULL) {
+	if (InputComponent != nullptr) {
 		InputComponent->BindAction("Fire", IE_Pressed, this, &AMannequin::PullTrigger);
 	}
 	
@@ -75,8 +82,18 @@ void AMannequin::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent
 
 }
 
+void AMannequin::UnPossessed() {
+	Super::UnPossessed();
+	if (Gun != NULL) {
+		Gun->AttachToComponent(GetMesh(), FAttachmentTransformRules(EAttachmentRule::SnapToTarget, true), TEXT("GripPoint"));
+	}
+	else {
+		UE_LOG(LogTemp, Warning, TEXT("Gun has not been generated yet!"));
+	}
+	
+}
+
 void AMannequin::PullTrigger() {
-	UE_LOG(LogTemp, Warning, TEXT("Firing!!!"));
 	Gun->OnFire();
 }
 

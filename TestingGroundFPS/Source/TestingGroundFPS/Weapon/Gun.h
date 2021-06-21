@@ -43,10 +43,12 @@ public:
 
 	/** AnimMontage to play each time we fire */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
-	UAnimMontage* FireAnimation;
-
+	class UAnimMontage* FireAnimation1P;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
-	UAnimInstance* AnimInstance;
+	class UAnimMontage* FireAnimation3P;
+
+	class UAnimInstance* AnimInstance1P;
+	class UAnimInstance* AnimInstance3P;
 
 	/** Whether to use motion controller location for aiming. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
