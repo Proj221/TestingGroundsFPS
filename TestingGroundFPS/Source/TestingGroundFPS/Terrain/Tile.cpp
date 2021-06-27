@@ -13,6 +13,11 @@ ATile::ATile()
 
 }
 
+void ATile::SetPool(UActorPool* InPool) {
+	Pool = InPool;
+	UE_LOG(LogTemp, Warning, TEXT("It is setting pool"));
+}
+
 void ATile::PlaceActors(TSubclassOf<AActor> ToSpawn, int MinSpawn, int MaxSpawn, float Radius, float MinScale, float MaxScale) {
 	
 	int NumberToSpawn = FMath::RandRange(MinSpawn, MaxSpawn);
