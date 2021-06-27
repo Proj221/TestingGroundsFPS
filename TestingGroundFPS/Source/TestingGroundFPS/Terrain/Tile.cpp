@@ -3,6 +3,7 @@
 
 #include "Tile.h"
 #include <Runtime/Engine/Public/DrawDebugHelpers.h>
+#include "EngineUtils.h"
 
 // Sets default values
 ATile::ATile()
@@ -56,6 +57,8 @@ void ATile::PlaceActor(TSubclassOf<AActor> ToSpawn, FVector SpawnPoint, float Ro
 void ATile::BeginPlay()
 {
 	Super::BeginPlay();
+
+	
 	
 }
 
