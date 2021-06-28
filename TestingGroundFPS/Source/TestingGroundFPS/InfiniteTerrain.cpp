@@ -10,13 +10,14 @@ AInfiniteTerrain::AInfiniteTerrain() {
 }
 
 void AInfiniteTerrain::PopulateBoundsVolumePool() {
-	TActorIterator<ANavMeshBoundsVolume> VolumeIterator = TActorIterator<ANavMeshBoundsVolume>(GetWorld());
+	auto VolumeIterator = TActorIterator<ANavMeshBoundsVolume>(GetWorld());
 	while (VolumeIterator) {
 		AddToPool(*VolumeIterator);
 		++VolumeIterator;
 	}
 }
 
-void AInfiniteTerrain::AddToPool(ANavMeshBoundsVolume* VolumeToAdd) {
-	UE_LOG(LogTemp, Warning, TEXT("Found Actor: %s"), *VolumeToAdd->GetName());
+void AInfiniteTerrain::AddToPool(ANavMeshBoundsVolume *VolumeToAdd) {
+	
+	NavMeshBoundsVolumePool->Add(VolumeToAdd);
 }
