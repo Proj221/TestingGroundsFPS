@@ -55,12 +55,18 @@ private:
 	void PositionNavMeshBoundsVolume();
 	bool CanSpawnAtLocation(FVector Location, float Radius);
 	bool FindEmptyLocation(FVector& OutLocation, float Radius);
+
+	// use static polymorphism. Actor would choose to spawn as AActor or APawn
 	void PlaceActor(TSubclassOf<AActor> ToSpawn, FSpawnPosition SpawnPosition);
-	void PlaceAIPawns(TSubclassOf<APawn> ToSpawn, FSpawnPosition SpawnPosition);
+	void PlaceActor(TSubclassOf<APawn> ToSpawn, FSpawnPosition SpawnPosition);
+
+	// use template to avoid the code duplicates
+	template<class T>
+	void RandomlyPlaceActors(TSubclassOf<T> ToSpawn, int MinSpawn = 1, int MaxSpawn = 1, float Radius = 500, float MinScale = 1, float MaxScale = 1);
+	
 
 	UActorPool* Pool;
 
 	AActor* NavMeshBoundsVolume;
 
-	TArray<FSpawnPosition> RandomSpawnPositions(int MinSpawn, int MaxSpawn, float Radius, float MinScale, float MaxScale);
 };
